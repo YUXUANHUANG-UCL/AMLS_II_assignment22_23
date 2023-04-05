@@ -2,6 +2,7 @@ import tensorflow as tf
 from data_generator import train_val_generator
 from autoencoder_hr import train_autoencoder_hr, psnr
 from predict_img import predict_img
+from pred_img_lr import pred_img_lr
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
 
@@ -65,3 +66,5 @@ hist = train_autoencoder_hr(train_samples, val_samples, train_img_gen, val_img_g
 pred = predict_img(test_img_gen, model_path, psnr, pred_path, 'unk')
 
 # ======================================================================================================================
+# ultra-low-resolution images
+pred_img_lr()
